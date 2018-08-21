@@ -5,7 +5,6 @@ using namespace cv;
 int main(int argc,char *argv[])
 {
 	Mat src, dst;
-
 	src=imread("C:\\Users\\Administrator\\Desktop\\1.jpg");
 
 	if (!src.data)
@@ -16,6 +15,9 @@ int main(int argc,char *argv[])
 
 	namedWindow("inputIm", CV_WINDOW_AUTOSIZE);
 	imshow("inputIm",src);
+
+	int cols = src.cols*src.channels();
+	int rows = src.rows;
 	waitKey(0);
 	return 0;
 }
